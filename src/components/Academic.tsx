@@ -1,6 +1,8 @@
 import { GraduationCap, Award } from "lucide-react";
+import { useParallax } from "@/hooks/useParallax";
 
 const Academic = () => {
+  const parallaxBg = useParallax(0.25);
   const records = [
     {
       degree: "CSE Undergraduate",
@@ -27,8 +29,8 @@ const Academic = () => {
 
   return (
     <section id="academic" className="relative section-padding overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/5" />
+      {/* Background effects with parallax */}
+      <div ref={parallaxBg} className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/5" />
       
       <div className="relative container-custom">
         <div className="text-center mb-20 animate-fade-in">
