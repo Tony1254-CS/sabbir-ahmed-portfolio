@@ -1,12 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Hero from "@/components/Hero";
+import Achievements from "@/components/Achievements";
+import Academic from "@/components/Academic";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Certificates from "@/components/Certificates";
+import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Hero />
+      <Achievements />
+      <Academic />
+      <Projects />
+      <Skills />
+      <Certificates />
+      <Contact />
+      
+      {/* Footer */}
+      <footer className="py-8 text-center border-t border-border/40">
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Sabbir Ahmed. Designed with precision and care.
+        </p>
+      </footer>
     </div>
   );
 };
