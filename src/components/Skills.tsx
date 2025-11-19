@@ -30,24 +30,39 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="section-padding">
-      <div className="container-custom">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Skills</h2>
-          <p className="text-muted-foreground text-lg">Technical expertise and soft skills</p>
+    <section id="skills" className="relative section-padding overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
+      
+      <div className="relative container-custom">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
+            <span className="text-sm font-medium text-primary">Expertise</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            Skills
+          </h2>
+          <p className="text-muted-foreground text-xl max-w-2xl mx-auto">Technical expertise and soft skills</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="glass-card rounded-xl p-6 hover-lift group text-center"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="group glass-card rounded-2xl p-8 hover-lift text-center relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.05}s`, animation: 'fadeIn 0.6s ease-out forwards' }}
             >
-              <div className="inline-flex p-3 bg-primary/5 rounded-xl mb-3 group-hover:bg-primary/10 transition-colors">
-                <skill.icon className="h-6 w-6 text-primary" />
+              {/* Gradient glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative">
+                <div className="inline-flex p-4 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl mb-4 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                  <skill.icon className="h-8 w-8 text-primary" />
+                </div>
+                <p className="font-semibold group-hover:text-accent transition-colors duration-300">
+                  {skill.name}
+                </p>
               </div>
-              <p className="font-medium text-sm">{skill.name}</p>
             </div>
           ))}
         </div>

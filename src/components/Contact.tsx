@@ -46,17 +46,29 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding">
-      <div className="container-custom">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-muted-foreground text-lg">Let's connect and collaborate</p>
+    <section id="contact" className="relative section-padding overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-background" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,176,255,0.08),transparent_60%)]" />
+      
+      <div className="relative container-custom">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-4 px-4 py-2 bg-accent/10 rounded-full">
+            <span className="text-sm font-medium text-accent">Connect</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            Get in Touch
+          </h2>
+          <p className="text-muted-foreground text-xl max-w-2xl mx-auto">Let's connect and collaborate</p>
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium">
+          <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-10 space-y-8 relative overflow-hidden group">
+            {/* Animated gradient border effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-accent rounded-3xl opacity-0 group-hover:opacity-20 blur transition-all duration-500" />
+            
+            <div className="relative space-y-2">
+              <label htmlFor="name" className="text-sm font-semibold">
                 Name
               </label>
               <Input
@@ -65,12 +77,12 @@ const Contact = () => {
                 placeholder="Your name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="rounded-xl"
+                className="rounded-xl h-12 text-lg"
               />
             </div>
 
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">
+            <div className="relative space-y-2">
+              <label htmlFor="email" className="text-sm font-semibold">
                 Email
               </label>
               <Input
@@ -79,12 +91,12 @@ const Contact = () => {
                 placeholder="your.email@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="rounded-xl"
+                className="rounded-xl h-12 text-lg"
               />
             </div>
 
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">
+            <div className="relative space-y-2">
+              <label htmlFor="message" className="text-sm font-semibold">
                 Message
               </label>
               <Textarea
@@ -93,26 +105,30 @@ const Contact = () => {
                 rows={6}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="rounded-xl resize-none"
+                className="rounded-xl resize-none text-lg"
               />
             </div>
 
-            <Button type="submit" size="lg" className="w-full rounded-full hover-lift">
-              <Send className="h-4 w-4 mr-2" />
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="relative w-full rounded-full h-14 text-lg hover-lift bg-gradient-to-r from-primary to-accent hover:shadow-2xl hover:shadow-accent/50 transition-all duration-300"
+            >
+              <Send className="h-5 w-5 mr-2" />
               Send Message
             </Button>
           </form>
 
           {/* Social Links */}
-          <div className="mt-12 text-center">
-            <p className="text-sm text-muted-foreground mb-4">Or connect with me on</p>
-            <div className="flex flex-wrap gap-3 justify-center">
+          <div className="mt-16 text-center">
+            <p className="text-muted-foreground mb-6">Or connect with me on</p>
+            <div className="flex flex-wrap gap-4 justify-center">
               {socialLinks.map((social) => (
                 <Button
                   key={social.label}
                   variant="outline"
                   size="icon"
-                  className="hover-lift rounded-full"
+                  className="hover-lift rounded-full h-12 w-12 border-2 hover:border-accent hover:bg-accent/5 transition-all duration-300 backdrop-blur-sm bg-card/50"
                   asChild
                 >
                   <a
@@ -121,7 +137,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     aria-label={social.label}
                   >
-                    <social.icon className="h-4 w-4" />
+                    <social.icon className="h-5 w-5" />
                   </a>
                 </Button>
               ))}
