@@ -1,6 +1,8 @@
 import { Brain, Shield, Cpu, FileText, Wrench } from "lucide-react";
+import { useParallax } from "@/hooks/useParallax";
 
 const Projects = () => {
+  const parallaxBg = useParallax(0.3);
   const projects = [
     {
       icon: Brain,
@@ -31,9 +33,9 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative section-padding overflow-hidden">
-      {/* Background effects */}
+      {/* Background effects with parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(217,176,255,0.05),transparent_60%)]" />
+      <div ref={parallaxBg} className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(217,176,255,0.05),transparent_60%)]" />
       
       <div className="relative container-custom">
         <div className="text-center mb-20 animate-fade-in">

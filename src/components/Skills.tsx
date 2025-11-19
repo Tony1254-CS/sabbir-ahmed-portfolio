@@ -12,8 +12,10 @@ import {
   MessageSquare,
   Users
 } from "lucide-react";
+import { useParallax } from "@/hooks/useParallax";
 
 const Skills = () => {
+  const parallaxBg = useParallax(0.2);
   const skills = [
     { icon: Brain, name: "Machine Learning" },
     { icon: Shield, name: "Cybersecurity" },
@@ -31,8 +33,8 @@ const Skills = () => {
 
   return (
     <section id="skills" className="relative section-padding overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
+      {/* Background effects with parallax */}
+      <div ref={parallaxBg} className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
       
       <div className="relative container-custom">
         <div className="text-center mb-20 animate-fade-in">

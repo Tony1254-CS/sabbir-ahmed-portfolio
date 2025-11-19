@@ -1,7 +1,10 @@
 import { Mail, Linkedin, Github, Instagram, Twitter, Facebook, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
+import { useParallax } from "@/hooks/useParallax";
 
 const Hero = () => {
+  const parallaxSlow = useParallax(0.3);
+  const parallaxFast = useParallax(0.5);
   const socialLinks = [
     { icon: Mail, href: "mailto:sabbirahmed12546@gmail.com", label: "Email" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/sabbir-ahmed1254", label: "LinkedIn" },
@@ -18,9 +21,9 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,176,255,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,180,255,0.08),transparent_50%)]" />
       
-      {/* Floating orbs */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* Floating orbs with parallax */}
+      <div ref={parallaxSlow} className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
+      <div ref={parallaxFast} className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
 
       <div className="relative container-custom section-padding">
         <div className="flex flex-col items-center gap-12 animate-fade-in">

@@ -1,6 +1,8 @@
 import { Trophy, Award, BookOpen, Mic, Palette, Lightbulb } from "lucide-react";
+import { useParallax } from "@/hooks/useParallax";
 
 const Achievements = () => {
+  const parallaxBg = useParallax(0.2);
   const achievements = [
     { icon: Trophy, title: "NASA Space Apps Challenge 2025", subtitle: "Regional 1st Runner-Up" },
     { icon: Award, title: "NASA Space Apps 2025", subtitle: "Global Nominee" },
@@ -14,9 +16,9 @@ const Achievements = () => {
 
   return (
     <section id="achievements" className="relative section-padding overflow-hidden">
-      {/* Subtle background pattern */}
+      {/* Subtle background pattern with parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,176,255,0.03),transparent_70%)]" />
+      <div ref={parallaxBg} className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,176,255,0.03),transparent_70%)]" />
       
       <div className="relative container-custom">
         <div className="text-center mb-20 animate-fade-in">

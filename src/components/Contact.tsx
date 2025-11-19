@@ -4,9 +4,11 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useParallax } from "@/hooks/useParallax";
 
 const Contact = () => {
   const { toast } = useToast();
+  const parallaxBg = useParallax(0.15);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -47,9 +49,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative section-padding overflow-hidden">
-      {/* Background effects */}
+      {/* Background effects with parallax */}
       <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,176,255,0.08),transparent_60%)]" />
+      <div ref={parallaxBg} className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(217,176,255,0.08),transparent_60%)]" />
       
       <div className="relative container-custom">
         <div className="text-center mb-20 animate-fade-in">
