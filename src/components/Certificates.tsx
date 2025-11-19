@@ -7,7 +7,7 @@ const Certificates = () => {
   
   // Placeholder certificates - user will replace these with their own
   const certificates = [
-    { id: 1, title: "Certificate 1", image: "/placeholder.svg" },
+    { id: 1, title: "Certificate 1", image: "https://i.ibb.co/ycNKLpXb/IMG20250926145713.jpg" },
     { id: 2, title: "Certificate 2", image: "/placeholder.svg" },
     { id: 3, title: "Certificate 3", image: "/placeholder.svg" },
     { id: 4, title: "Certificate 4", image: "/placeholder.svg" },
