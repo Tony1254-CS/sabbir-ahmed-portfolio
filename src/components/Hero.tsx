@@ -1,4 +1,12 @@
-import { Mail, Linkedin, Github, Instagram, Twitter, Facebook, ChevronDown } from "lucide-react";
+import {
+  Mail,
+  Linkedin,
+  Github,
+  Instagram,
+  Twitter,
+  Facebook,
+  ChevronDown,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { useParallax } from "@/hooks/useParallax";
 
@@ -7,11 +15,23 @@ const Hero = () => {
   const parallaxFast = useParallax(0.5);
   const socialLinks = [
     { icon: Mail, href: "mailto:sabbirahmed12546@gmail.com", label: "Email" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/sabbir-ahmed1254", label: "LinkedIn" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/sabbir-ahmed1254",
+      label: "LinkedIn",
+    },
     { icon: Github, href: "https://github.com/Tony1254-CS", label: "GitHub" },
     { icon: Twitter, href: "https://x.com/Sabbir1254", label: "Twitter" },
-    { icon: Instagram, href: "https://www.instagram.com/s.a_tony?igsh=dWh6dnEzZzdnNmhv", label: "Instagram" },
-    { icon: Facebook, href: "https://m.me/sabbir.ahmed.1254", label: "Facebook" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/s.a_tony?igsh=dWh6dnEzZzdnNmhv",
+      label: "Instagram",
+    },
+    {
+      icon: Facebook,
+      href: "https://m.me/sabbir.ahmed.1254",
+      label: "Facebook",
+    },
   ];
 
   return (
@@ -20,10 +40,16 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/20 to-accent/5" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,176,255,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(120,180,255,0.08),transparent_50%)]" />
-      
+
       {/* Floating orbs with parallax */}
-      <div ref={parallaxSlow} className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
-      <div ref={parallaxFast} className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div
+        ref={parallaxSlow}
+        className="absolute top-20 left-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse"
+      />
+      <div
+        ref={parallaxFast}
+        className="absolute bottom-20 right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000"
+      />
 
       <div className="relative container-custom section-padding">
         <div className="flex flex-col items-center gap-12 animate-fade-in">
@@ -32,12 +58,12 @@ const Hero = () => {
             {/* Outer glow rings */}
             <div className="absolute inset-0 bg-gradient-to-r from-accent via-primary to-accent rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-all duration-700 animate-pulse scale-110" />
             <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-primary/20 rounded-full blur-3xl group-hover:blur-[100px] transition-all duration-700 scale-125" />
-            
+
             {/* Image container */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-accent to-primary rounded-full opacity-80 blur-sm group-hover:blur-md transition-all duration-500" />
               <img
-                src="https://i.ibb.co/sq5W3nx/q3-Dhb-Cd-P.jpg"
+                src="https://i.ibb.co/ycNKLpXb/IMG20250926145713.jpg"
                 alt="Sabbir Ahmed"
                 className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-card shadow-2xl ring-4 ring-accent/20 group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
@@ -55,9 +81,13 @@ const Hero = () => {
             </h1>
             <div className="h-1 w-24 mx-auto bg-gradient-to-r from-transparent via-accent to-transparent rounded-full" />
             <p className="text-xl md:text-3xl text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed font-light">
-              CSE Student exploring <span className="text-accent font-medium">Machine Learning</span>, 
-              <span className="text-primary font-medium"> Cybersecurity</span> & 
-              <span className="text-accent font-medium"> Intelligent Systems</span>
+              CSE Student exploring{" "}
+              <span className="text-accent font-medium">Machine Learning</span>,
+              <span className="text-primary font-medium"> Cybersecurity</span> &
+              <span className="text-accent font-medium">
+                {" "}
+                Intelligent Systems
+              </span>
             </p>
           </div>
 
